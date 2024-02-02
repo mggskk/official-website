@@ -9,7 +9,7 @@ Welcome to the official repository of the "Mahatma Gandhi Govt. School Kunchalwa
 
 ## Technologies Used
 
-- **MERN Stack:** MongoDB, Express.js, React.js, Node.js
+- **MERN Stack:** MongoDB, Express.js, React.js(Typescript), Node.js
 - **CSS Framework:** Tailwind CSS with Daisy UI
 - **State Management:** Redux Toolkit
 

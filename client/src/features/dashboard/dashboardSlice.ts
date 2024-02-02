@@ -47,15 +47,17 @@ export const dashboardSlice = createSlice({
   initialState,
   reducers: {
     updateUserData: (state, action) => {
-      state.users = state.users?.map((user) => {
-        if (user._id === action.payload._id) {
-          return {
-            ...user,
-            ...action.payload,
+      state.users =
+        state.users &&
+        state.users?.map((user) => {
+          if (user._id === action.payload._id) {
+            return {
+              ...user,
+              ...action.payload,
+            }
           }
-        }
-        return user
-      })
+          return user
+        })
     },
   },
   extraReducers: (builder) => {

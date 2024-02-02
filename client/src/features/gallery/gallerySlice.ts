@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { deleteImg, fetchImages, uploadPhoto } from "./galleryAPI"
-import { AxiosError, AxiosResponse } from "axios"
+import { AxiosError } from "axios"
 import toast from "react-hot-toast"
 
 export interface imgProps {
@@ -121,11 +121,9 @@ export const gallerySlice = createSlice({
         state.images =
           state.images &&
           state.images?.filter((img) => img._id !== action.payload.imgId)
-        toast.success(action.payload.msg)
       })
       .addCase(deleteImgThunk.rejected, (state, action) => {
         state.imgDeleteStatus = "idle"
-        toast.error(action?.payload?.msg)
       })
   },
 })

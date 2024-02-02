@@ -4,8 +4,6 @@ config();
 export const env = {
   MONGO_URI: process.env.MONGO_URI,
   CLIENT_URI: process.env.CLIENT_URI,
-  SENDER_EMAIL: process.env.SENDER_EMAIL,
-  SENDER_EMAIL_PASSWORD: process.env.SENDER_EMAIL_PASSWORD,
   PROJECT_TITLE: process.env.PROJECT_TITLE,
   PORT: process.env.PORT || 5000,
   CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
