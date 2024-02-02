@@ -7,6 +7,7 @@ import { deleteImgThunk, fetchImagesThunk, togglePage } from "../gallerySlice"
 import Loader from "../../../utils/Loader"
 import { useSearchParams } from "react-router-dom"
 import Skeleton from "../../../utils/Skeleton"
+import toast from "react-hot-toast"
 
 export default function Gallery() {
   const dispatch = useDispatch()
@@ -67,13 +68,18 @@ export default function Gallery() {
                   {user && user.role === "ADMIN" && (
                     <button
                       className="btn btn-ghost btn-sm w-auto px-1"
-                      onClick={() => {
-                        dispatch(
+                      onClick={async () => {
+                        const res = await dispatch(
                           deleteImgThunk({
                             imgId: img._id,
                             img_public_id: img.img_link.public_id,
                           }) as any,
                         )
+                        if (res?.payload?.success) {
+                          toast.success(res?.payload?.msg)
+                        } else {
+                          toast.error(res?.payload?.msg)
+                        }
                       }}
                     >
                       <TrashIcon className="w-6 h-6 text-error" />
