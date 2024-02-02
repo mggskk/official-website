@@ -125,9 +125,7 @@ export default function Profile() {
             </div>
             <h2 className="text-2xl font-semibold ml-4">My Profile</h2>
           </div>
-          {!user?.isEmailVerified ? (
-            <button className="btn ">Verify email</button>
-          ) : (
+          {!user?.isEmailVerified && (
             <CheckBadgeIcon
               className="h-10 w-10 text-primary"
               title="Verified account"
