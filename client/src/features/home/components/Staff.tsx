@@ -1,5 +1,3 @@
-import { PlusIcon } from "@heroicons/react/24/outline"
-import Modal from "../../dashboard/components/Modal"
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { fetchStaffThunk } from "../../dashboard/dashboardSlice"
