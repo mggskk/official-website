@@ -34,11 +34,13 @@ export default function Staff() {
                 </span>
               </div>
               <div className="collapse-content">
-                <p className="max-w-4xl">
-                  <span className="font-semibold">Teaches - </span>
-                  {s.subject}
-                </p>
-                <p className="max-w-4xl">{s.description}</p>
+                {s.subject && (
+                  <p className="max-w-4xl">
+                    <span className="font-semibold">Teaches - </span>
+                    {s.subject}
+                  </p>
+                )}
+                {s.description && <p className="max-w-4xl">{s.description}</p>}
               </div>
             </div>
           ))}
