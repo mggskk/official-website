@@ -67,7 +67,6 @@ export const registerUser = async (req, res) => {
         user.avatar.secure_url = result.secure_url;
         user.avatar.public_id = result.public_id;
         await user.save();
-        await fs.rm(`tmp/${req.file.filename}`);
       }
     } catch (error) {
       console.log(error.message);
