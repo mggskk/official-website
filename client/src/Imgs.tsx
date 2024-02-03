@@ -1,4 +1,4 @@
-import logoImg from "./assets/MGGS Logo.png"
+import logoImg from "./assets/logo.png"
 
 type imgProps = {
   className: string
