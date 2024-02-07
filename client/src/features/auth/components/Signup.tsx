@@ -139,7 +139,7 @@ export default function Signup() {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Password
+                  Create password
                 </label>
               </div>
               <div className="mt-2">
@@ -200,7 +200,6 @@ export default function Signup() {
                   id="subject"
                   {...register("subject")}
                   type="text"
-                  required
                   className="input input-bordered input-sm w-full rounded"
                   placeholder="For teachers only"
                 />

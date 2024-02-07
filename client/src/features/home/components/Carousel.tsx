@@ -32,7 +32,7 @@ export default function Carousel({
   }, [])
 
   return (
-    <div className="px-4">
+    <div className="px-4 my-4 rounded">
       <div className="overflow-hidden relative max-w-7xl ">
         <div
           className="flex transition-transform ease-out duration-500"
