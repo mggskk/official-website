@@ -4,7 +4,6 @@ import Modal from "./Modal"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { deleteImgThunk, fetchImagesThunk, togglePage } from "../gallerySlice"
-import Loader from "../../../utils/Loader"
 import { useSearchParams } from "react-router-dom"
 import Skeleton from "../../../utils/Skeleton"
 import toast from "react-hot-toast"
@@ -86,6 +85,14 @@ export default function Gallery() {
                     </button>
                   )}
                 </div>
+                {user && user.role === "ADMIN" && (
+                  <div className="flex justify-between items-center p-2 border-t text-sm">
+                    <p>
+                      <span className="font-semibold">Uploaded by - </span>
+                      {img.uploaded_by?.user_email}
+                    </p>
+                  </div>
+                )}
               </div>
             )
           })
