@@ -82,15 +82,7 @@ export default function Profile() {
                       className="rounded-full"
                     />
                   )}
-                  {updateStatus === "idle" && !disableInps && (
-                    <label
-                      htmlFor="avatar"
-                      className="bg-base-100 rounded-full p-1 absolute bottom-0 right-0 outline outline-gray-200"
-                    >
-                      <PencilSquareIcon className="w-6 h-6 " />
-                      {/* <span className="loading loading-spinner loading-md p-0 m-0"></span> */}
-                    </label>
-                  )}
+
                   <input
                     type="file"
                     name="avatar"
@@ -121,6 +113,15 @@ export default function Profile() {
                 </div>
               ) : (
                 <UserCircleIcon className="w-16 h-16 text-neutral" />
+              )}
+              {updateStatus === "idle" && !disableInps && (
+                <label
+                  htmlFor="avatar"
+                  className="bg-base-100 rounded-full p-1 absolute bottom-0 right-0 outline outline-gray-200"
+                >
+                  <PencilSquareIcon className="w-6 h-6 " />
+                  {/* <span className="loading loading-spinner loading-md p-0 m-0"></span> */}
+                </label>
               )}
             </div>
             <h2 className="text-2xl font-semibold ml-4">My Profile</h2>

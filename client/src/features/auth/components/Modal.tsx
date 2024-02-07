@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form"
 import { UserType } from "../../auth/authTypes"
 import { availableUserRoles } from "../../../constants"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
-import { changeCurrentPasswordThunk } from "../../auth/authSlice"
+import {
+  changeCurrentPasswordThunk,
+  logOutUserThunk,
+} from "../../auth/authSlice"
 import toast from "react-hot-toast"
 
 interface FormValues {
@@ -49,6 +52,9 @@ export default function Modal({ userId }: { userId: string }) {
               )
               if (res.payload?.success) {
                 toast.success(res.payload.msg)
+                dispatch(logOutUserThunk()).then(() =>
+                  localStorage.removeItem("location"),
+                )
               } else {
                 toast.error(res.payload.msg)
               }

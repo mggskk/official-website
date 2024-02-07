@@ -24,6 +24,7 @@ export default function Gallery() {
               key={img._id}
               src={img.img_link.secure_url}
               className="rounded"
+              loading="lazy"
             />
           ))
         )}
