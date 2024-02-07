@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../app/hooks"
 import { fetchStaffThunk } from "../../dashboard/dashboardSlice"
+import { UserCircleIcon } from "@heroicons/react/24/outline"
 
 export default function Staff() {
   const { staff } = useAppSelector((state) => state.dashboard)
@@ -25,7 +26,11 @@ export default function Staff() {
               />
               <div className="collapse-title text-xl font-medium flex items-center">
                 <div className="w-24 mask mask-squircle">
-                  <img src={s.avatar?.secure_url} />
+                  {s.avatar ? (
+                    <img src={s.avatar?.secure_url} />
+                  ) : (
+                    <UserCircleIcon className="w-full h-auto text-neutral" />
+                  )}
                 </div>
                 <span className="ml-2">
                   {s.firstName} {s.lastName}
