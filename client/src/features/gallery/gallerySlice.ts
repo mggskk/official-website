@@ -13,6 +13,10 @@ export interface imgProps {
   }
   createdAt: string
   updatedAt: string
+  uploaded_by?: {
+    user_id: string
+    user_email: string
+  }
 }
 
 export interface galleryState {

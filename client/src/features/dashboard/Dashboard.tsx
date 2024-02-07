@@ -1,4 +1,8 @@
-import { CheckBadgeIcon, PencilSquareIcon } from "@heroicons/react/24/outline"
+import {
+  CheckBadgeIcon,
+  PencilSquareIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/outline"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { fetchUsersThunk } from "./dashboardSlice"
 import { useEffect, useState } from "react"
@@ -44,7 +48,11 @@ export default function Dashboard() {
                 <div className="collapse-title text-xl font-medium">
                   <div className="avatar flex items-center ">
                     <div className="w-16 mask mask-squircle">
-                      <img src={user.avatar?.secure_url} />
+                      {user.avatar ? (
+                        <img src={user.avatar?.secure_url} alt="User profile" />
+                      ) : (
+                        <UserCircleIcon className="w-full h-auto text-neutral" />
+                      )}
                     </div>
                     <p className="ml-2">
                       {user.firstName} {user.lastName}
